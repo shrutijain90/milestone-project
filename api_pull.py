@@ -10,9 +10,9 @@ def get_data(ticker):
 
     params = {'ticker':ticker, 'qopts.columns':'date'+','+'close', 'api_key':'q6i6KJAszzGMXgEihbj7'}
     
-    today = date(2018, 2, 28)
-    start_date = date(2018, 2, 01)
-    date_list = [today - timedelta(days=x) for x in range((today-start_date).days+1)]
+    end_date = date(2018, 2, 28)
+    start_date = date(2018, 2, 1)
+    date_list = [end_date - timedelta(days=x) for x in range((end_date-start_date).days+1)]
     
     resp = requests.get(url,params)
     json = resp.json()
