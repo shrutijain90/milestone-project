@@ -8,10 +8,9 @@ from datetime import datetime, date
 def get_data(ticker):
     url = 'https://www.quandl.com/api/v3/datatables/WIKI/PRICES.json'
 
-    params = {'api_key':'q6i6KJAszzGMXgEihbj7', 'qopts.columns':'date,close'}
-    params['ticker'] = ticker
+    params = {'ticker':ticker, 'qopts.columns':'date'+','+'close', 'api_key':'q6i6KJAszzGMXgEihbj7'}
     
-    today = date.today()
+    today = date(2018, 3, 1)
     start_date = today.replace(year=today.year if today.month > 1 else today.year - 1, month=today.month - 1 if today.month >1 else 12)
     
     resp = requests.get(url,params)
