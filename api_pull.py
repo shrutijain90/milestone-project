@@ -23,7 +23,9 @@ def get_data(ticker):
         df = df.set_index(0)
         df.index = pd.to_datetime(df.index)
         df.columns = ['closing']
-        return df.loc[date_list]
+        df = df.reindex(date_list)
+        df = df.dropna()
+        return df
     except Exception as e:
         df = []
         return df
