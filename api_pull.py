@@ -8,7 +8,7 @@ from datetime import datetime, date, timedelta
 def get_data(ticker):
     url = 'https://www.quandl.com/api/v3/datatables/WIKI/PRICES.json'
 
-    params = {'ticker':ticker, 'qopts.columns':'date'+','+'close', 'api_key':'q6i6KJAszzGMXgEihbj7'}
+    params = {'ticker':ticker, 'qopts.columns':'date'+','+'close', 'api_key':'my_api_key'}
     
     end_date = date(2018, 2, 28)
     start_date = date(2018, 2, 1)
